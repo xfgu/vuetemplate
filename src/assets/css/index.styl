@@ -1,0 +1,147 @@
+bg = {
+    line: #f0f1f3,
+    bg-primary: #27b041,
+    bg-main: #f0f1f3,
+    bg-info: rgb(250, 143, 1),
+    bg-white: #fff,
+    bg-gray: #fafbfd,
+    bg-99: #fef0f0
+};
+colors = {
+    text-primary: #384057,
+    text-black: #354056,
+    text-info: #949fbf,
+    text-success: #27b041,
+    text-danger: #f05261,
+    text-remove: #fb374a,
+    text-white: #fff,
+    text-border: #e6e6e6
+};
+
+.d-flex {
+    display: flex;
+}
+
+.flex-d {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.br {
+    border-radius: 5px;
+}
+
+$gird {
+    display: grid;
+}
+
+.grid {
+    @extend $gird;
+}
+
+for key, val in bg {
+    .{key} {
+        background-color: val;
+        color: colors['text-white'];
+        border: 1px solid transparent;
+    }
+
+    .r{key} {
+        @extend .{key};
+        background-color: colors['text-white'];
+        color: val;
+        border-color: val;
+    }
+}
+
+for key, val in colors {
+    .{key} {
+        color: val;
+    }
+}
+
+for val in range(12px, 30px) {
+    .fs-{val} {
+        font-size: val;
+    }
+}
+
+direction = {
+    t: top,
+    r: right,
+    b: bottom,
+    l: left
+};
+distance = {
+    p: padding,
+    m: margin,
+    b: border
+};
+
+for i in 8 .. 20 {
+    for j, item in distance {
+        .{j}-{i} {
+            {item}: i * 1px;
+        }
+
+        .{j}-0 {
+            {item}: 0;
+        }
+
+        .{j}x-{i} {
+            {item}: 0 i * 1px;
+        }
+
+        .{j}y-{i} {
+            {item}: i * 1px 0;
+        }
+
+        for key, value in direction {
+            .{j}{key}-{i} {
+                {item}-{value}: i * 1px;
+            }
+        }
+    }
+}
+
+@css {
+    .calc{
+       height:  calc(100vh - 60px);
+     }
+}
+jc = {
+    between: space-between,
+    evenly: space-evenly,
+    around: space-around,
+    center: center,
+    end: flex-end
+};
+
+.ai-center {
+    align-items: center;
+}
+
+for key, val in jc {
+    .{key} {
+        justify-content: val;
+    }
+}
