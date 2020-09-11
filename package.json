@@ -1,5 +1,5 @@
 {
-  "name": "dzx",
+  "name": "base_tamplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "@smallwei/avue": "^2.6.15",
     "core-js": "^3.6.5",
     "element-ui": "^2.4.5",
+    "leaflet": "^1.7.1",
     "store2": "^2.12.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

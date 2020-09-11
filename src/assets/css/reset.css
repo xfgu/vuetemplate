@@ -26,8 +26,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    font-size: 13px;
-    color: #666666;
+	font-size: 13px;
+	height: 100vh;
+	overflow: hidden;
+	color: #666666;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
 }
 ol, ul {
 	list-style: none;
