@@ -1,5 +1,7 @@
 <template>
-  <div ref="gmap" class="w-100 h-100 bg-gray oh" id="cmap"></div>
+  <div ref="gmap" class="w-100 h-100 bg-gray oh por" id="cmap">
+    <div class="poa">图例</div>
+  </div>
 </template>
 
 <script>
