@@ -18,8 +18,27 @@
             <div class="box">Aside</div>
           </el-scrollbar>
         </el-aside>
-        <el-main class="p-0">
+        <el-main class="p-0 bg-gray text-info">
           <g-map />
+          <!-- <el-upload
+            style="padding:20px"
+            class="upload-demo"
+            ref="upload"
+            :before-upload="beforeUpload"
+            list-type="picture-card"
+            action
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :on-success="handleSuccess"
+            :on-error="handleError"
+            :file-list="fileList"
+            :auto-upload="false"
+            :limit="1"
+            :data="formdata"
+            accept=".jpeg, .jpg, .png, .gif"
+          >
+            <i class="el-icon-plus"></i>
+          </el-upload> -->
         </el-main>
       </el-container>
     </el-container>
@@ -31,6 +50,48 @@ import gMap from "@/components/map.vue";
 export default {
   name: "app",
   created() {},
+  data() {
+    return {
+      formdata: { type: 0 }, //是否携带参数
+      fileList: [],
+      url: "/api/upload/uploadppt",
+    };
+  },
+  methods: {
+    handleChange(file, fileList) {
+      console.log(file, fileList);
+    },
+    submitUpload() {
+      this.$refs.upload.submit();
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file.name);
+    },
+    handleSuccess(res, file) {
+      this.$message.success(file.name + " 上传成功！");
+      this.$refs.upload.clearFiles();
+    },
+    handleError(err, file) {
+      // console.log(err,file)
+      this.$message.error(file.name + " 上传失败！");
+    },
+    beforeUpload(file) {
+      console.log(432423423);
+      const isJPG = file.type === "image/jpeg";
+      const isLt2M = file.size / 1024 / 1024 < 0.2;
+
+      if (!isJPG) {
+        this.$message.error("上传头像图片只能是 JPG 格式!");
+      }
+      if (!isLt2M) {
+        this.$message.error("上传头像图片大小不能超过 200kb!");
+      }
+      return isJPG && isLt2M;
+    },
+  },
   mounted() {},
   components: {
     gMap,
