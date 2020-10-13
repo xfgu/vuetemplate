@@ -1,22 +1,22 @@
 bg = {
     line: #f0f1f3,
-    bg-primary: #27b041,
-    bg-main: #f0f1f3,
-    bg-info: rgb(250, 143, 1),
-    bg-white: #fff,
-    bg-danger: #f05261,
-    bg-gray: #fafbfd,
-    bg-99: #fef0f0
+    primary: #09af7b,
+    main: #f0f1f3,
+    info: rgb(250, 143, 1),
+    white: #fff,
+    danger: #f05261,
+    gray: #fafbfd,
+    bg99: #fef0f0
 };
 colors = {
-    text-primary: #27b041,
-    text-black: #354056,
-    text-info: #949fbf,
-    text-success: #27b041,
-    text-danger: #f05261,
-    text-remove: #fb374a,
-    text-white: #fff,
-    text-border: #e6e6e6
+    primary: #09af7b,
+    black: #354056,
+    info: #54647d,
+    success: #09af7b,
+    danger: #f05261,
+    remove: #fb374a,
+    white: #fff,
+    border: #e6e6e6
 };
 
 .d-flex {
@@ -57,13 +57,13 @@ colors = {
 for key, val in bg {
     .{key} {
         background-color: val;
-        color: colors['text-white'];
+        color: colors['white'];
         border: 1px solid transparent;
     }
 
     .r{key} {
         @extend .{key};
-        background-color: colors['text-white'];
+        background-color: colors['white'];
         color: val;
         border-color: val;
     }
@@ -144,13 +144,13 @@ for key, val in jc {
 
 .iconfont {
     &.active {
-        border: 1px solid colors['text-primary'];
-        color: colors['text-primary'];
+        border: 1px solid colors['primary'];
+        color: colors['primary'];
     }
 }
 
 $border {
-    border: 1px solid colors['text-border'];
+    border: 1px solid colors['border'];
 }
 
 .border {
@@ -166,7 +166,7 @@ bor = {
 
 for key, val in bor {
     .{key} {
-        {val}: 1px solid colors['text-border'];
+        {val}: 1px solid colors['border'];
     }
 }
 
@@ -184,4 +184,11 @@ for key, val in bor {
     .el-scrollbar__wrap {
         overflow-x: hidden;
     }
+}
+
+.w-240 {
+    width: 240px;
+    height: 100%;
+    background: bg['primary'];
+    color: #ffffff
 }
