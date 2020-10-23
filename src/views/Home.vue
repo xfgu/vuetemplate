@@ -4,7 +4,7 @@
 
 <script>
 // @ is an alias to /src
-
+import {} from '@/api/request.js';
 export default {
   name: "Home",
   components: {},

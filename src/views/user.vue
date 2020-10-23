@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import {} from '@/api/request.js';
 export default {
   name: "user",
 };
