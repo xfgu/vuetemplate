@@ -28,6 +28,7 @@ body {
     line-height: 1;
 	font-size: 13px;
 	height: 100vh;
+	user-select: none;
 	overflow: hidden;
 	color: #666666;
 	font-family: "微软雅黑", Helvetica, Arial, sans-serif;

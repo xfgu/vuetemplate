@@ -45,6 +45,13 @@ colors = {
     overflow: hidden;
 }
 
+#app {
+    >>> .el-card__body {
+        padding: 0;
+        @extend .h-100;
+    }
+}
+
 .w-100 {
     width: 100%;
     overflow: hidden;
@@ -55,17 +62,8 @@ colors = {
 }
 
 for key, val in bg {
-    .{key} {
+    .bg-{key} {
         background-color: val;
-        color: colors['white'];
-        border: 1px solid transparent;
-    }
-
-    .r{key} {
-        @extend .{key};
-        background-color: colors['white'];
-        color: val;
-        border-color: val;
     }
 }
 
@@ -186,9 +184,26 @@ for key, val in bor {
     }
 }
 
+.fw {
+    font-weight: 900;
+}
+
+.avue-crud .el-tag {
+    display: none !important;
+}
+
+.avue-crud__menu {
+    display: none !important;
+}
+
+.active {
+    background: bg['primary'];
+    color: colors['white'];
+}
+
 .w-240 {
     width: 240px;
     height: 100%;
     background: bg['primary'];
-    color: #ffffff
+    color: #ffffff;
 }

@@ -11,7 +11,7 @@ import router from "../router";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  // baseURL: process.env.baseURL || process.env.apiUrl || ""
+  baseURL: process.env.VUE_APP_baseURL || "",
   timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };
@@ -22,7 +22,7 @@ _axios.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     if (config.method === 'get') {
-      config.data = true
+      config.data = {}
     } else {
       config.data = qs.stringify(config.data)
     }
