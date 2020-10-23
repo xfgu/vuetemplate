@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import { logout } from "@/api/request.js";
 import gMap from "@/components/map.vue";
 export default {
   name: "app",
@@ -74,36 +75,28 @@ export default {
   created() {},
   mounted() {},
   methods: {
-    handleCommand(command) {
+    async handleCommand(command) {
       if (command == "logOut") {
         //退出登录
-        this.$confirm("此操作将退出当前登录的账户, 是否继续?", "提示", {
+        await this.$confirm("此操作将退出当前登录的账户, 是否继续?", "提示", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning",
-        })
-          .then(() => {
-            this.$axios({
-              method: "post",
-              url: this.$config.baseUrl + "comm/logout",
-            }).then((res) => {
-              if (res.data.code == 0) {
-                this.$router.replace("/login");
-                localStorage.clear();
-                location.reload();
-                this.$message({
-                  message: "注销登录成功",
-                  type: "success",
-                });
-              } else {
-                this.$message({
-                  message: res.data.msg,
-                  type: "error",
-                });
-              }
-            });
-          })
-          .catch(() => {});
+        });
+        let { code, data, msg } = await this.$axios(logout());
+        if (code == 0) {
+          this.$router.replace({ name: "login" });
+          this.$mstore.clear();
+          this.$message({
+            message: "注销登录成功",
+            type: "success",
+          });
+        } else {
+          this.$message({
+            message: msg,
+            type: "error",
+          });
+        }
       } else {
         //修改密码
         this.dialogVisible = true;
