@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import AgTileLayer from "@/utils/agTileLayer.js";
 import { mapGetters } from "vuex";
 export default {
   name: "gmap",
@@ -47,6 +46,13 @@ export default {
         attributionControl: false,
         zoomControl: false,
       });
+       L.control.zoom({
+        zoomInText: "+",
+        zoomInTitle: "放大",
+        zoomOutText: "-",
+        zoomOutTitle: "缩小",
+        position:'bottomright'
+      }).addTo(this.map);
       this.changeLayer();
     },
 
@@ -62,12 +68,9 @@ export default {
           L.tileLayer(layer, {
             zoomOffset: 1,
             subdomains: ["0", "1", "2", "3", "4", "5", "6", "7"],
+            opacity:1
           })
         );
-      }
-      for (let url of this.$config.customMapUrl) {
-        let ringsTileLayer = AgTileLayer(url);
-        mainMapLayerGroup.push(ringsTileLayer);
       }
       this.mainMapLayer = L.layerGroup(mainMapLayerGroup).addTo(this.map);
     },

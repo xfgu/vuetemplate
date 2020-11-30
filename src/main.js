@@ -7,8 +7,8 @@ import mstore from 'store2'
 import './assets/css/reset.css'
 import './assets/css/index.styl'
 import { config } from './assets/config.js'
-import './plugins/element.js'
 import leaflet from 'leaflet'
+import './plugins/element.js'
 Vue.config.productionTip = false
 
 Vue.prototype.mstore = mstore

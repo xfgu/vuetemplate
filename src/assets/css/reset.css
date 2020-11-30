@@ -17,22 +17,23 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
     vertical-align: baseline;
-    box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
+
+html,body {
     line-height: 1;
 	font-size: 13px;
 	height: 100vh;
-	overflow: hidden;
 	color: #666666;
 	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
 }
-ol, ul {
+ol, ul,li {
 	list-style: none;
 }
 blockquote, q {
