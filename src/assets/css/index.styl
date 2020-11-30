@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 colors = {
     line: #f0f1f3,
     primary: #1877ed,
@@ -16,27 +15,6 @@ colors = {
     lightsuccess: #eaf6ea,
     lightwarning: #fef4e9,
     lightdanger: #fef6f6
-=======
-bg = {
-    line: #f0f1f3,
-    primary: #09af7b,
-    main: #f0f1f3,
-    info: rgb(250, 143, 1),
-    white: #fff,
-    danger: #f05261,
-    gray: #fafbfd,
-    bg99: #fef0f0
-};
-colors = {
-    primary: #09af7b,
-    black: #354056,
-    info: #54647d,
-    success: #09af7b,
-    danger: #f05261,
-    remove: #fb374a,
-    white: #fff,
-    border: #e6e6e6
->>>>>>> 3ebe8de1f10b355a77acd8c75fd2690509531783
 };
 
 .d-flex {
@@ -81,7 +59,6 @@ colors = {
     border-radius: 5px;
 }
 
-<<<<<<< HEAD
 for key, val in colors {
     .{key} {
         color: val;
@@ -95,17 +72,6 @@ for key, val in colors {
         @extend .{key};
         background-color: val;
         color: colors['white'];
-=======
-for key, val in bg {
-    .bg-{key} {
-        background-color: val;
-    }
-}
-
-for key, val in colors {
-    .{key} {
-        color: val;
->>>>>>> 3ebe8de1f10b355a77acd8c75fd2690509531783
     }
 }
 
@@ -233,13 +199,5 @@ for key, val in bor {
 }
 
 .active {
-    background: bg['primary'];
-    color: colors['white'];
-}
-
-.w-240 {
-    width: 240px;
-    height: 100%;
-    background: bg['primary'];
-    color: #ffffff;
+    background: colors['primary'];
 }

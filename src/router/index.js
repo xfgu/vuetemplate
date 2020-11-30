@@ -40,22 +40,34 @@ const routes = [{
     ]
   },
   {
-<<<<<<< HEAD
     path: '/two',
     name: 'two',
-    component: () => import(/* webpackChunkName: "two" */ '../views/two.vue')
+    component: () => import( /* webpackChunkName: "two" */ '../views/two.vue')
   },
   {
     path: '/user',
     name: 'user',
-    component: () => import(/* webpackChunkName: "user" */ '../views/user.vue')
-=======
+    component: () => import( /* webpackChunkName: "user" */ '../views/user.vue')
+  },
+  {
     path: '*',
-    component: () => import('../views/no.vue')
->>>>>>> 3ebe8de1f10b355a77acd8c75fd2690509531783
+    name: 'no',
+    component: () => import( /* webpackChunkName: "no" */ '../views/no.vue')
   }
 ]
-
+router.beforeEach((to, from, next) => {
+  if (to.path !== '/login' && !store.getters.islogin) {
+    next('/login');
+  }
+  next();
+});
+export const dyroute = () => {
+  if (store.getters.ismanage) {
+    router.options.routes[2].children=[...router.options.routes[2].children,dy]
+    router.addRoutes(router.options.routes)
+  }
+  // console.log(router.options.routes[2].children)
+}
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,

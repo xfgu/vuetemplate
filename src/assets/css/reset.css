@@ -30,11 +30,7 @@ html,body {
     line-height: 1;
 	font-size: 13px;
 	height: 100vh;
-<<<<<<< HEAD
-=======
 	user-select: none;
-	overflow: hidden;
->>>>>>> 3ebe8de1f10b355a77acd8c75fd2690509531783
 	color: #666666;
 	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
 }
