@@ -8,6 +8,9 @@
 import Layout from '@/views/layout.vue';
 export default {
   name: "app",
+  data() {
+    return {};
+  },
   created() {},
   mounted() {},
   components: {
@@ -17,6 +20,8 @@ export default {
 </script>
 
 <style lang="stylus">
+@import './assets/css';
+
 #app {
   height: 100vh;
 }
