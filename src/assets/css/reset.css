@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 html,body {
     line-height: 1;
 	font-size: 13px;
-	height: 100vh;
+	min-height: 100vh;
 	user-select: none;
 	color: #666666;
 	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
