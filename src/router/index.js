@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import layout from '../views/layout.vue'
-
+import store from '../store'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -55,12 +55,7 @@ const routes = [{
     component: () => import( /* webpackChunkName: "no" */ '../views/no.vue')
   }
 ]
-router.beforeEach((to, from, next) => {
-  if (to.path !== '/login' && !store.getters.islogin) {
-    next('/login');
-  }
-  next();
-});
+
 export const dyroute = () => {
   if (store.getters.ismanage) {
     router.options.routes[2].children=[...router.options.routes[2].children,dy]
@@ -73,5 +68,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+// router.beforeEach((to, from, next) => {
+//   if (to.path !== '/login' && !store.getters.islogin) {
+//     next('/login');
+//   }
+//   next();
+// });
 export default router
