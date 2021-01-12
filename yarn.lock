@@ -7383,7 +7383,7 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.10.1:
+sortablejs@1.10.2, sortablejs@^1.10.1:
   version "1.10.2"
   resolved "https://registry.npm.taobao.org/sortablejs/download/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
   integrity sha1-bkA2TZE/mLhaFPZnj5K1wSIfUpA=
@@ -8037,6 +8037,33 @@ uglify-js@3.4.x:
     commander "~2.19.0"
     source-map "~0.6.1"
 
+umy-table@1.1.8:
+  version "1.1.8"
+  resolved "https://registry.npm.taobao.org/umy-table/download/umy-table-1.1.8.tgz#d1d7ad433d0e7276be88dddb4a186ea98c26a2d6"
+  integrity sha1-0detQz0Ocna+iN3bShhuqYwmotY=
+  dependencies:
+    async-validator "~1.8.1"
+    deepmerge "^1.2.0"
+    normalize-wheel "^1.0.1"
+    resize-observer-polyfill "^1.5.0"
+    throttle-debounce "^1.0.1"
+    vuedraggable "^2.23.2"
+    xe-utils "^3.0.0-beta.12"
+
+umy-ui@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.npm.taobao.org/umy-ui/download/umy-ui-1.1.6.tgz#d92b9b95cf83848e840116936cfe6167cf2cec91"
+  integrity sha1-2Sublc+DhI6EARaTbP5hZ88s7JE=
+  dependencies:
+    async-validator "~1.8.1"
+    deepmerge "^1.2.0"
+    normalize-wheel "^1.0.1"
+    resize-observer-polyfill "^1.5.0"
+    throttle-debounce "^1.0.1"
+    umy-table "1.1.8"
+    vuedraggable "^2.23.2"
+    xe-utils "^3.0.0-beta.12"
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npm.taobao.org/unicode-canonical-property-names-ecmascript/download/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
@@ -8342,6 +8369,13 @@ vuedraggable@^2.17.0:
   dependencies:
     sortablejs "^1.10.1"
 
+vuedraggable@^2.23.2:
+  version "2.24.3"
+  resolved "https://registry.npm.taobao.org/vuedraggable/download/vuedraggable-2.24.3.tgz#43c93849b746a24ce503e123d5b259c701ba0d19"
+  integrity sha1-Q8k4SbdGokzlA+Ej1bJZxwG6DRk=
+  dependencies:
+    sortablejs "1.10.2"
+
 vuex-persistedstate@^4.0.0-beta.1:
   version "4.0.0-beta.1"
   resolved "https://registry.npm.taobao.org/vuex-persistedstate/download/vuex-persistedstate-4.0.0-beta.1.tgz#f84cda8d1dd1bb5eb19f4e64753f78b2569f605f"
@@ -8604,6 +8638,11 @@ ws@^6.0.0, ws@^6.2.1:
   integrity sha1-RC/fCkftZPWbal2P8TD0dI7VJPs=
   dependencies:
     async-limiter "~1.0.0"
+
+xe-utils@^3.0.0-beta.12:
+  version "3.0.4"
+  resolved "https://registry.npm.taobao.org/xe-utils/download/xe-utils-3.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxe-utils%2Fdownload%2Fxe-utils-3.0.4.tgz#dbb45180b07feab6551ccf8e774ff1550023e773"
+  integrity sha1-27RRgLB/6rZVHM+Od0/xVQAj53M=
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
