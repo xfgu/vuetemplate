@@ -11,10 +11,11 @@ export const config = {
         zoom: 8,   // 初始地图等级
         minZoom: 7,   // 地图最小级别
         maxZoom: 18,    // 地图最大级别
+        zindex:0,   //
     },
     mainMapUrl:[
-		["http://srv{s}.zjditu.cn/ZJEMAP_2D/wmts?service=WMTS&request=GetTile&version=1.0.0&style=default&format=image/jpgpng&layer=TDT_ZJIMGANNO&TileMatrixSet=default028mm&TileMatrix={z}&TileCol={x}&TileRow={y}","http://srv{s}.zjditu.cn/ZJEMAPANNO_2D/wmts?service=WMTS&request=GetTile&version=1.0.0&style=default&format=image/jpgpng&layer=TDT_ZJIMGANNO&TileMatrixSet=default028mm&TileMatrix={z}&TileCol={x}&TileRow={y}"],
-		["http://srv{s}.zjditu.cn/ZJDOM_2D/wmts?service=WMTS&request=GetTile&version=1.0.0&style=default&format=image/jpgpng&layer=imgmap&TileMatrixSet=default028mm&TileMatrix={z}&TileCol={x}&TileRow={y}","http://srv{s}.zjditu.cn/ZJEMAPANNO_2D/wmts?service=WMTS&request=GetTile&version=1.0.0&style=default&format=image/jpgpng&layer=TDT_ZJIMGANNO&TileMatrixSet=default028mm&TileMatrix={z}&TileCol={x}&TileRow={y}"],
+		["http://t{s}.tianditu.gov.cn/vec_c/wmts?layer=vec&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&TileMatrix={z}&TileCol={x}&TileRow={y}&tk=5ec867c2be5178c5416a0b504d28bd2a"],
+		["http://t{s}.tianditu.gov.cn/cva_c/wmts?layer=cva&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&TileMatrix={z}&TileCol={x}&TileRow={y}&tk=5ec867c2be5178c5416a0b504d28bd2a"],
 	],
     customMapUrl:[],
 }
